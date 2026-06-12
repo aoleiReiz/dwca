@@ -158,13 +158,13 @@ def api_qrcode(station_id):
 
     return jsonify({
         "ok": True,
-        "image_url": f"/static/qrcodes/{filename}",
+        "image_url": f"/qrcodes/{filename}",
         "checkin_url": checkin_url,
     })
 
 
 # ✅ This route serves files from /tmp
-@app.route('/static/qrcodes/<filename>')
+@app.route('/qrcodes/<filename>')
 def serve_qrcode(filename):
     return send_from_directory(app.static_folder, filename)
 
