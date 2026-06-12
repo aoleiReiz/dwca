@@ -22,7 +22,7 @@ app = Flask(__name__,static_folder='/tmp')
 # 配置 —— 改成你的实际地址，手机需在同一网络能访问
 # ============================================================
 SECRET_KEY = "city_explore_2024_secret"
-BASE_URL = "https://dwca-7ydy8kyaf-aoleireizs-projects.vercel.app"  # ← 改成你的局域网IP
+BASE_URL = "https://dwca.vercel.app"  # ← 改成你的局域网IP
 QRCODE_DIR = os.path.join(app.static_folder, "qrcodes")
 
 STATIONS = [
