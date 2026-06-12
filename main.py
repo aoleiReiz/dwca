@@ -11,6 +11,7 @@ import time
 import os
 from datetime import datetime
 
+from flask import Flask, send_from_directory
 from flask import Flask, request, jsonify, render_template
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
@@ -161,6 +162,11 @@ def api_qrcode(station_id):
         "checkin_url": checkin_url,
     })
 
+
+# ✅ This route serves files from /tmp
+@app.route('/qrcodes/<filename>')
+def serve_qrcode(filename):
+    return send_from_directory(app.static_folder, filename)
 
 def _add_label(img, text):
     """二维码底部加文字标注"""
