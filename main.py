@@ -166,7 +166,7 @@ def api_qrcode(station_id):
 # ✅ This route serves files from /tmp
 @app.route('/qrcodes/<filename>')
 def serve_qrcode(filename):
-    return send_from_directory(app.static_folder, filename)
+    return send_from_directory(QRCODE_DIR, filename)
 
 def _add_label(img, text):
     """二维码底部加文字标注"""
