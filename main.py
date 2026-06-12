@@ -164,7 +164,7 @@ def api_qrcode(station_id):
 
 
 # ✅ This route serves files from /tmp
-@app.route('/qrcodes/<filename>')
+@app.route('/static/qrcodes/<filename>')
 def serve_qrcode(filename):
     return send_from_directory(app.static_folder, filename)
 
