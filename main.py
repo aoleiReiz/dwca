@@ -15,7 +15,7 @@ from flask import Flask, request, jsonify, render_template
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='/tmp')
 
 # ============================================================
 # 配置 —— 改成你的实际地址，手机需在同一网络能访问
